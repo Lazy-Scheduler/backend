@@ -77,6 +77,3 @@ def generate_long_term_access_token():
 def get_group_id():
     return data['group_id']
 
-# curl -i -X GET \
-#  "https://graph.facebook.com/v13.0/me/groups?fields=id%2Cname&access_token=EAAeeZA2tHGRkBAHigaSvkZAF3kTkUvTeTr3v4hpkz44KQvZAhvgZALYGY739nX9qj0LnzOdsE1oHzk5fZAZBd0ODBBhsnYuZCN5LsxMsmtnEfcpadz3jMJzyy9LjKscfSo8YHw9ZAndtFghgUw8GhxD4JqqZCE0k1ZALMya1lZAPtAPSNJ3AmzQFBgL4ZBSUmnfZBb3KzxRx8irfVS1szWHPdMBID"
-
