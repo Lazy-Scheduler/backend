@@ -7,7 +7,7 @@ from flask import Blueprint, Response
 posta = Blueprint('posta', __name__)
 
 def load_data():
-    with open('data/data.json') as data_file:
+    with open('/data/data.json') as data_file:
         return json.load(data_file)
 
 
