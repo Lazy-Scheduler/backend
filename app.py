@@ -4,12 +4,14 @@ from celery import Celery
 # blueprints
 from src.views.policy_render import policy
 from src.views.posta import posta
+from src.views.pages import pages
 
 app = Flask(__name__)
 
 #register blueprints
 app.register_blueprint(policy)
 app.register_blueprint(posta)
+app.register_blueprint(pages)
 
 @app.route('/')
 def hello():

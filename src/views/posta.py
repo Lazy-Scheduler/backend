@@ -7,7 +7,7 @@ from flask import Blueprint, Response
 posta = Blueprint('posta', __name__)
 
 def load_data():
-    with open('/data/data.json') as data_file:
+    with open('data/data.json') as data_file:
         return json.load(data_file)
 
 
@@ -35,17 +35,17 @@ def post_to_facebook():
     group_id = os.environ.get('FACEBOOK_POSTA_GROUP_ID')
     long_term_access_token = os.environ.get('FACEBOOK_POSTA_LONG_TERM_ACCESS_TOKEN')
 
-    return Response(long_term_access_token)
-    # long_term_access_token = os.environ.get('FACEBOOK_POSTA_LONG_TERM_ACCESS_TOKEN')
-    # data = load_data()
-    # for item in data:
-    #     message = item['message']
+    # return Response(long_term_access_token)
+    long_term_access_token = os.environ.get('FACEBOOK_POSTA_LONG_TERM_ACCESS_TOKEN')
+    data = load_data()
+    for item in data:
+        message = item['message']
         
 
-    #     url = 'https://graph.facebook.com/{}/feed'.format(group_id)
-    #     res = requests.post(url, params={
-    #         'access_token': long_term_access_token
-    #     }, data={
-    #         'message': message
-    #     })
-    #     return res.json()
+        url = 'https://graph.facebook.com/{}/feed'.format(group_id)
+        res = requests.post(url, params={
+            'access_token': long_term_access_token
+        }, data={
+            'message': message
+        })
+        return res.json()
